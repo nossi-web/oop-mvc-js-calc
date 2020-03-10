@@ -6,7 +6,7 @@ import Button from "./Button.js";
 export default class Calculator {
 
     // class properties
-    _buttons;
+    _buttons = [];
     _display;
 
     constructor() {
@@ -17,15 +17,9 @@ export default class Calculator {
         let buttonsNodeList = document.querySelectorAll(".button");
 
         // loop through the node list and instantiate a new button class for each
-        i = 0;
-        buttonsNodeList.forEach(function(button) {
-
-            console.log(button);
-
-            _buttons[i] = new Button(button);
-            ++i;
-
-        });
+        for (let i = 0; i < buttonsNodeList.length; ++i) {
+            this._buttons[i] = new Button(buttonsNodeList[i]);
+        }
 
     }
 
