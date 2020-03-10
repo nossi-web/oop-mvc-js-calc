@@ -1,0 +1,15 @@
+.flex-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    flex: 1;
+    border: 2px solid #000;
+    width: 20%;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+}
