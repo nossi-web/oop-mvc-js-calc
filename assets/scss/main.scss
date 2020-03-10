@@ -1,5 +1,9 @@
 /* main.scss */
 
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "typography";
 
 /* flex grid */
 
@@ -12,19 +16,27 @@
 
 /* button button, who's got the */
 
-$button-padding: 1rem;
-$button-hover-bg-color: #000;
-$button-hover-color: #FFF;
 .button {
     flex: 1;
-    border: 2px solid #000;
+    @include bordered($ui-border-width, $ui-border-color);
     width: 20%;
-    height: 3rem;
-    line-height: 3rem;
+    height: $ui-line-height;
+    line-height: $ui-line-height;
     text-align: center;
     cursor: pointer;
     &:hover {
         background-color: $button-hover-bg-color;
         color: $button-hover-color;
     }
+}
+
+
+/* display */
+
+#display {
+    width: 100%;
+    @include bordered($ui-border-width, $ui-border-color);
+    line-height: $ui-line-height;
+    text-align: right;
+    padding: 0 1rem;
 }
