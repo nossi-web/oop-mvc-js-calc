@@ -140,6 +140,9 @@ input {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold; }
 
+main {
+  border: #000 solid 2px; }
+
 /* flex grid */
 .flex-grid {
   display: flex;

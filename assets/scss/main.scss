@@ -4,6 +4,10 @@
 @import "mixins";
 @import "reset";
 @import "typography";
+main {
+    @include bordered($ui-border-width, $ui-border-color);
+}
+
 
 /* flex grid */
 

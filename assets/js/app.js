@@ -1,20 +1,8 @@
 // app.js
+import Calculator from "./calculator/Calculator.js";
 
-// class definitions
+let calculator = new Calculator();
 
-// Button
-class Button {
+console.log(calculator);
 
-
-
-    constructor() {
-        this._value
-    }
-
-}
-
-// Display
-
-
-
-// have to build 
+console.log(calculator.doShit());
