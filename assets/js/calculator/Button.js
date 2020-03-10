@@ -1,8 +1,11 @@
 // Button
 
-class Button {
+export default class Button {
 
-    constructor(type, value) {
+    _type;
+    _value;
+
+    constructor(button) {
         this._type = type;
         this._value = value;
     }
