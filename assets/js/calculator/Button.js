@@ -1,6 +1,6 @@
 // Button
 
-import Equation from "./Expression.js/index.js";
+import Expression from "./Expression.js";
 
 export default class Button {
 
@@ -38,7 +38,8 @@ export default class Button {
         // console.log(this._type);
         // console.log(this._value);
         // console.log("======================");
-        this.updateEquation(this._type, this._value);
+        // #TODO: left off here, send input to equation
+        this.updateExpression(this._type, this._value);
     }
 
     updateExpression(type, value) {
