@@ -25,9 +25,5 @@ export default class Calculator {
 
     // class methods
 
-    doShit() {
-        return "shit";
-    }
-
 
 }

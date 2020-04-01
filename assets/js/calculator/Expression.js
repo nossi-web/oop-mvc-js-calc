@@ -42,6 +42,7 @@ export default class Expression {
                 break;
 
             case "evaluator":
+                // EVAL IS BAD:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
                 this._string = eval(this._string);
                 break;
 
@@ -51,8 +52,9 @@ export default class Expression {
 
     }
 
-    static updateDisplay(string) {
+    static updateDisplay(expression) {
 
+        Display.update(expression);
     }
 
 }
