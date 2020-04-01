@@ -10,7 +10,8 @@ export default class Display {
 
     static update(expression) {
 
-        // #TODO: clean this up, create reference to DOM node as Class Prop
+        //this._input.value = expression;
+        //TODO: come back and fix... :(
         document.querySelector("#display").value = expression;
 
     }
