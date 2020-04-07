@@ -5,11 +5,11 @@ import Display from "./Display.js";
 export default class Expression {
 
     // the expression is essentially a string of chars
-    _string
+    static _string = "0";
 
     construct() {
-        this._string = 0;
-        this.updateDisplay(this._string);
+        Expression._string = 0;
+        Expression.updateDisplay(Expression._string);
     }
 
     // update
@@ -20,6 +20,11 @@ export default class Expression {
         console.log(type);
         console.log(value);
 
+        // check to see if there's a leading zero in the expression, 
+        if (Expression._string == "0") {
+            console.log("heyyy there's a leading zero we need to politely remove");
+            Expression._string = "";
+        }
 
         // have to check for a few things, depending on the type of the button pressed. 
         // time for a switch case!
@@ -27,31 +32,32 @@ export default class Expression {
         switch (type) {
             case "number":
                 // just adding a number to the string, time to concatenate. 
-                this._string += value;
+                Expression._string += value;
                 break;
 
             case "operator":
                 // here still the same. I had other plans till I remembered JS has a function that evaluates choice expressions
-                this._string += value;
+                Expression._string += value;
                 break;
 
             case "manipulator":
 
                 // if it's a C we have to clear the display, 
-                this._string = 0;
+                Expression._string = 0;
                 break;
 
             case "evaluator":
                 // EVAL IS BAD:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
-                this._string = eval(this._string);
+                Expression._string = eval(Expression._string);
                 break;
 
         }
 
-        this.updateDisplay(this._string);
+        Expression.updateDisplay(Expression._string);
 
     }
 
+    // 
     static updateDisplay(expression) {
 
         Display.update(expression);

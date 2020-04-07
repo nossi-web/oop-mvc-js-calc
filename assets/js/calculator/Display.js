@@ -2,17 +2,24 @@
 
 export default class Display {
 
-    _input
+    static _inputElement
 
-    constructor(input) {
-        this._input = input;
+    constructor(inputElement) {
+        Display._inputElement = inputElement;
+        Display._inputElement.value = "0";
     }
 
     static update(expression) {
 
-        //this._input.value = expression;
-        //TODO: come back and fix... :(
-        document.querySelector("#display").value = expression;
+        // TODO: here we'll have to clear out that leading zero, if it exists, 
+        // if (expression == "0" || self._inputElement.value == "0") {
+        //     console.log("apparently we have a leading zero...");
+        // }
+
+        console.log(Display._inputElement);
+        console.log(Display._inputElement.value);
+
+        Display._inputElement.value = expression;
 
     }
 

@@ -22,11 +22,11 @@ export default class Calculator {
             this._buttons[i] = new Button(buttonsNodeList[i]);
         }
 
-        // get a reference to the input element
-        let display = document.querySelector("#display");
+        // get a reference to the display, which is an input element
+        let displayElement = document.querySelector("#display");
 
         // construct the display
-        this._display = new Display(display);
+        this._display = new Display(displayElement);
 
     }
 
