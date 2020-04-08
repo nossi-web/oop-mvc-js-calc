@@ -43,7 +43,20 @@ export default class Expression {
             case "manipulator":
 
                 // if it's a C we have to clear the display, 
-                Expression._string = 0;
+                if (value == "C") {
+                    Expression._string = 0;
+
+                    // if it's the backspace key, remove the last char in the string
+                } else if (value == "<-") {
+
+
+                    // backspace will always remove a char from the string
+                    Expression._string = Expression._string.slice(0, -1);
+
+                    // if the expression is EMPTY, we need to put that 0 back in for the User to see. 
+                    if (Expression._string == "") Expression._string = "0";
+
+                }
                 break;
 
             case "evaluator":
