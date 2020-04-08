@@ -35,10 +35,9 @@ export default class Button {
     // click event handler utilizing an arrow function
     // 'this' is accessible
     clickEventHandler = event => {
-        // console.log(this._type);
-        // console.log(this._value);
-        // console.log("======================");
-        // #TODO: left off here, send input to equation
+        console.log(this._type);
+        console.log(this._value);
+        console.log("======================");
         this.updateExpression(this._type, this._value);
     }
 

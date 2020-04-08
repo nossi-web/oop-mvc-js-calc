@@ -16,9 +16,9 @@ export default class Expression {
     static update(type, value) {
 
         // just to verify the data is getting passed to this class
-        console.log("----------------------");
-        console.log(type);
-        console.log(value);
+        // console.log("----------------------");
+        // console.log(type);
+        // console.log(value);
 
         // check to see if there's a leading zero in the expression, 
         if (Expression._string == "0") {
@@ -46,9 +46,8 @@ export default class Expression {
                 if (value == "C") {
                     Expression._string = 0;
 
-                    // if it's the backspace key, remove the last char in the string
+                    // if it 's the backspace key, remove the last char in the string
                 } else if (value == "<-") {
-
 
                     // backspace will always remove a char from the string
                     Expression._string = Expression._string.slice(0, -1);
@@ -56,7 +55,18 @@ export default class Expression {
                     // if the expression is EMPTY, we need to put that 0 back in for the User to see. 
                     if (Expression._string == "") Expression._string = "0";
 
+                } else if (value == "-/+") {
+
+                    if (Expression._string[0] == "-") {
+                        Expression._string = Expression._string.slice(1, Expression._string.length);
+                    } else {
+                        let tempStringBucket = Expression._string;
+                        Expression._string = "-";
+                        Expression._string += tempStringBucket;
+                    }
+
                 }
+
                 break;
 
             case "evaluator":
